@@ -24,7 +24,7 @@ function EditProduct() {
   }
   async function getSingleProduct() {
     const res = await axios.get(
-      `http://localhost:5000/api/v1/products/${params.id}`,
+      `https://backend-course-cit.onrender.com/api/v1/products/${params.id}`,
     );
     console.log(res);
     setProduct(res.data.data);
@@ -35,7 +35,7 @@ function EditProduct() {
   async function submitHandler(e) {
     e.preventDefault();
     const res = await axios.patch(
-      `http://localhost:5000/api/v1/products/${params.id}`,
+      `https://backend-course-cit.onrender.com/api/v1/products/${params.id}`,
       product,
     );
     console.log(res);
