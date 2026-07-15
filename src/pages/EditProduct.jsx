@@ -47,7 +47,7 @@ function EditProduct() {
       review: "",
     });
     toast.success("Product updated successfully");
-    navigate("/products");
+    navigate("/");
   }
   return (
     <div className="container">

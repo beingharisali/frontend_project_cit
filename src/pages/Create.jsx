@@ -36,7 +36,7 @@ function Create() {
       review: "",
     });
     toast.success("Product created successfully");
-    navigate("/products");
+    navigate("/");
   }
   return (
     <div className="container">
