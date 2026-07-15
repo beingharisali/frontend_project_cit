@@ -7,7 +7,9 @@ import toast from "react-hot-toast";
 function Products() {
   const [products, setProducts] = useState([]);
   async function fetchProducts() {
-    const res = await axios.get(`${process.env.BACKEND_URL}/api/v1/products`);
+    const res = await axios.get(
+      `${process.env.VITE_BACKEND_URL}/api/v1/products`,
+    );
     console.log(res.data.data);
     setProducts(res.data.data);
   }
@@ -17,7 +19,7 @@ function Products() {
   }, []);
   async function deleteProduct(id) {
     const res = await axios.delete(
-      `${process.env.BACKEND_URL}/api/v1/products/${id}`,
+      `${process.env.VITE_BACKEND_URL}/api/v1/products/${id}`,
     );
     console.log(res);
     const newData = products.filter((meriProduct) => meriProduct._id !== id);

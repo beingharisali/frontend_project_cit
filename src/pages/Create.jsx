@@ -24,7 +24,7 @@ function Create() {
   async function submitHandler(e) {
     e.preventDefault();
     const res = await axios.post(
-      `${process.env.BACKEND_URL}/api/v1/products`,
+      `${process.env.VITE_BACKEND_URL}/api/v1/products`,
       product,
     );
     console.log(res);
