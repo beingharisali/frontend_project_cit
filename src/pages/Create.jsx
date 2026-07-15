@@ -24,7 +24,7 @@ function Create() {
   async function submitHandler(e) {
     e.preventDefault();
     const res = await axios.post(
-      "https://backend-course-cit.onrender.com/api/v1/products",
+      `${process.env.BACKEND_URL}/api/v1/products`,
       product,
     );
     console.log(res);
