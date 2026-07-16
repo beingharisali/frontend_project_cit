@@ -20,17 +20,21 @@ function Login() {
   }
   async function submitHandler(e) {
     e.preventDefault();
-    const res = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/login`,
-      user,
-    );
-    console.log(res);
-    setUser({
-      email: "",
-      password: "",
-    });
-    toast.success("User logged in successfully");
-    navigate("/products");
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/login`,
+        user,
+      );
+      console.log(res);
+      setUser({
+        email: "",
+        password: "",
+      });
+      toast.success("User logged in successfully");
+      navigate("/products");
+    } catch (error) {
+      toast.error("Error in logged in");
+    }
   }
   return (
     <div className="container">
